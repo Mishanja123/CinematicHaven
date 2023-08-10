@@ -44,7 +44,7 @@ const MovieDetails = () => {
             <Container>
                 <List>
                     <li>
-                        { poster ? <img src={''||`https://image.tmdb.org/t/p/w500${poster}`} alt="poster" /> : <p>poster</p>}
+                        { poster ? <img src={''||`https://image.tmdb.org/t/p/w500${poster}`} alt="poster" /> : <img src={'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'} alt="profile" />}
                         <span>{voteAverage}%</span>
                     </li>
                 </List>

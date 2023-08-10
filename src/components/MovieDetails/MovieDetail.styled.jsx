@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     gap: 20px;
+    margin-bottom: 60px;
 `;
 
 export const List = styled.ul`
@@ -15,14 +16,13 @@ export const List = styled.ul`
             border-radius: 1px;
             width: 350px;
             height: 553.4px;
-            margin-bottom: 25px;
             box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.7);
             transition: box-shadow 0.3s ease;
         };
         > span {
             position: absolute;
             top: 520px;
-            right: 380px;
+            right: 10px;
             font-size: 15px;
             font-weight: bold;
             color: white;
