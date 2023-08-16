@@ -1,7 +1,12 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { HeaderDiv, Container, Link } from './Header.styled';
+import HomeSvg from '../../Svg/HomeSvg/HomeSvg'
+import MovieSvg from '../../Svg/MovieSvg/MovieSvg'
+import LikeSvg from '../../Svg/LikeSvg/LikeSvg';
+
+
+import { HeaderDiv, Container, Link, Nav } from './Header.styled';
 
 export const Header = () => {
 
@@ -9,10 +14,17 @@ export const Header = () => {
         <div>
             <HeaderDiv>
                 <Container>
-                    <nav>
-                        <Link to="/" end>Home</Link>
-                        <Link to="/movies">Movies</Link>
-                    </nav>
+                    <Nav>
+                        <Link to="/" end>
+                            <HomeSvg/>
+                        </Link>
+                        <Link to="/movies">
+                            <MovieSvg/>
+                        </Link>
+                        <Link to="/liked">
+                            <LikeSvg/>
+                        </Link>
+                    </Nav>
                 </Container>
             </HeaderDiv>
             <Suspense fallback={<div>Loading page...</div>}>

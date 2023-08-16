@@ -11,8 +11,8 @@ import { Header } from '../layout/Header/Header';
 const  Home = lazy(() => import('../pages/Home/Home'));
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('components/MovieDetails/MovieDetails'));
-const Cast = lazy(() => import('../Cast/Cast'));
-const Reviews = lazy(() => import('../Reviews/Reviews'));
+const Cast = lazy(() => import('../MovieDetails/Cast/Cast'));
+const Reviews = lazy(() => import('../MovieDetails/Reviews/Reviews'));
 
 
 

@@ -62,7 +62,6 @@ const MovieDetails = () => {
                     <ul>
                         <li>
                             <GenresList>  
-                                <h3>Genres:</h3>
                                 {genres.map(({name, id}) => {
                                     return(
                                         <li key={id}>
