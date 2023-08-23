@@ -12,7 +12,6 @@ import { getSimilarMovie } from '../../services/api';
 
 export const SimilarMovie = ({id, location}) => {
     const [similarMovie, setSimilarMovie] = useState([]);
-    const backPath =  useRef(location.state?.from ?? `/`);
 
     useEffect(() => {
         const fetchSimilarMovies = async() => {
@@ -37,7 +36,6 @@ export const SimilarMovie = ({id, location}) => {
         slidesToShow: 7,
         slidesToScroll: 1,
         swipeToSlide: true,
-        focusOnSelect: true,
         focusOnSelect: true,
         centerMode: true,
         centerPadding: -18,

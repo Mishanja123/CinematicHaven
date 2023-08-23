@@ -36,7 +36,6 @@ const Cast = () => {
         slidesToScroll: 1,
         swipeToSlide: true,
         focusOnSelect: true,
-        focusOnSelect: true,
         centerMode: true,
         centerPadding: -18,
         style: {

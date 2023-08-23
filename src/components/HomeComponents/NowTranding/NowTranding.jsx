@@ -53,7 +53,6 @@ export const NowTranding = ({ location}) => {
         slidesToScroll: 1,
         swipeToSlide: true,
         focusOnSelect: true,
-        focusOnSelect: true,
         centerMode: true,
         centerPadding: -10,
         style: {

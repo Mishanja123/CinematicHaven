@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
-import { getGenres } from '../../services/api';
 
 import { Overlay, Modal } from './MenuModal.styled';
 
 
 export const MenuModal = ({onClose, isMenuOpen}) => {
 
-    const [items, setItems] = useState([]);
 
     useEffect(() => {
         const handleKeyDown = (event) => {

@@ -9,7 +9,7 @@ import { Header } from '../layout/Header/Header';
 // import { Cast } from '../Cast/Cast';
 // import { Reviews } from '../Reviews/Reviews';
 const  Home = lazy(() => import('../pages/Home/Home'));
-const Movies = lazy(() => import('../pages/Movies/Movies'));
+// const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('components/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../MovieDetails/Cast/Cast'));
 const Reviews = lazy(() => import('../MovieDetails/Reviews/Reviews'));

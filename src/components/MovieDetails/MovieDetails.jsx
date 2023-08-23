@@ -1,5 +1,5 @@
-import { useState, useEffect, Suspense, useRef } from 'react';
-import { useParams, Outlet, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import { getMovieDetails } from '../services/api';
 
 import { MovieInfo } from './MovieInfo/MovieInfo';
@@ -12,7 +12,6 @@ const MovieDetails = () => {
     const [poster, setPoster] = useState('');
     const [genres, setGenres] = useState([]);
     const location = useLocation();
-    const backPath =  useRef(location.state?.from ?? '/');
     const { movieId } = useParams();
 
 
@@ -21,7 +20,6 @@ const MovieDetails = () => {
             try {
                 const results = await getMovieDetails(movieId);
                 const year = results.release_date.split('-')[0];
-                const voteAverage = Math.ceil(parseFloat(results.vote_average) * 10);
                 setGenres(results.genres);
                 setTitle(results.title);
                 setYear(year);

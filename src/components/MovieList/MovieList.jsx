@@ -1,4 +1,4 @@
-import { Container, List, Item, Img, NameWrap, MovieTitle, MovieYear } from './MovieList.styled';
+import { List, Item, Img, NameWrap, MovieTitle, MovieYear } from './MovieList.styled';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 
