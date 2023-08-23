@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { getMovieReviews } from 'components/services/api';
 
 import { ReviewStyled } from './Reviews.styled';
@@ -22,7 +23,8 @@ const Reviews = () => {
     }, [movieId]);
 
     return (
-        <div>
+        <>
+     <div>
         {reviews.length === 0 ? <p>No reviews available</p> : reviews.map((review) => (
             <ReviewStyled key={review.id}>
                 <div className="review-header">
@@ -53,6 +55,7 @@ const Reviews = () => {
             </ReviewStyled>
         ))}
     </div>
+    </>
     );
 };
 

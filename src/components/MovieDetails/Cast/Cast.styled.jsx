@@ -1,24 +1,25 @@
 import styled from 'styled-components';
 
+
+
+export const SecondHeading = styled.h3`
+    margin: 0;
+`;
+
 export const List = styled.ul`
     display: flex;
-    align-items: flex-end;
-    gap: 15px;
-    overflow: auto;
-    margin-bottom: 40px;
-    > li {
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 335px;
+    gap: 12px;
+`;
+export const LiItem = styled.li`
+    max-width: 150px;
 
-        > img {
-        width:200px;
-        box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.7);
-        };
-
-        > p {
-        margin-bottom: 0;
-        };
-    };
+`;
+export const Title = styled.p`
+    font-size:14px;
+`;
+export const Img = styled.img`
+    border-radius: 20px;
+    width: 155px;
+    height: 225px;
+    margin-bottom: 5px;
 `;

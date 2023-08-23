@@ -34,6 +34,7 @@ export const ReviewStyled = styled.div`
             flex-direction: column;
             align-items: flex-start;
             > .author-name {
+                color: black;
                 font-weight: bold;
                 margin: 0;
             }
@@ -54,6 +55,7 @@ export const ReviewStyled = styled.div`
 
     > .review-content {
         font-size: 14px;
+        color: black;
         line-height: 1.5;
         width: 500px;
         height: 200px;

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import { PlaySvg } from '../../Svg/PlaySvg/PlaySvg';
@@ -30,15 +29,4 @@ export const RecentlyViewed = ({ items,location }) => {
             </MovieWrapper>
         </Container>
     );
-};
-RecentlyViewed.propTypes = {
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        name: PropTypes.string,
-        poster_path: PropTypes.string,
-        vote_average: PropTypes.number,
-        id: PropTypes.number,
-      })
-    ).isRequired,
 };

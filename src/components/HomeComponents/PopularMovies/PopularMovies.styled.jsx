@@ -1,197 +1,103 @@
 import styled from 'styled-components';
-
-
 export const Container = styled.div`
-max-width: 1300px;
+    width: 310px;
+    height:466.01px;
+    background: rgba(255, 255, 255, 0.30);   
+    border-radius: 38px;
+    padding: 14px 20px 30px;
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+`;
+
+export const MovieWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+`;
+
+export const Heading = styled.h2`
+    leading-trim: both;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    color: #fff;
+    margin: 0;
+    margin-bottom: 10px;
 `;
 
 export const List = styled.ul`
+    border-radius: 16px;
+    padding: 5px 5px;
+    height: 430px; 
+    overflow-y: auto;
+    margin-right: 0;
 
 `;
 
 export const LiItem = styled.li`
-    position: relative;
-    overflow: hidden;
-
-    min-width: 1250px;
-    height: 510px;
-    border-radius:25px;
+    width: 308px;
+    height: 173px;
+    overflow-y: hidden;
+    border-radius:16px;
     margin: 0;
     background: url(${props => props.$backgroundUrl}) no-repeat;
     background-size:cover;
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.4);
+    transition: box-shadow 0.4s ease;
+    &:not(:last-child) {
+        margin-bottom: 10px;
     }
-    a {
+
+    > a {
+        border-radius:16px;
+        text-transform: uppercase;
         text-decoration: none;
-    margin-top: 0;
-    }
-`;
-
-export const BtnWrap = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 20px;
-`;
-
-export const InfoBtn = styled.button`
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 15px 19px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(250, 250, 250, 0.30);
-    backdrop-filter: blur(20px);
-    transition: opacity 0.9s ease, background 0.9s ease, color 0.9s ease; 
-
-    svg {
-        fill: rgb(255, 255, 255);
-        transition: fill 0.9s ease;
-    }
-    &:hover {
-        background: rgba(255, 255, 255);
-        opacity: 1;
-        color: #2E2E2E;
-        svg {
-            fill: #2E2E2E;
-        }
-    }
-`;
-
-export const PlayBtn = styled.button`
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 15px 19px;
-    border: none;
-    border-radius: 10px;
-    background: rgba(250, 250, 250, 0.30);
-    backdrop-filter: blur(20px);
-    transition: opacity 0.9s ease, background 0.9s ease, color 0.9s ease; 
-
-    svg {
-        fill: rgb(255, 255, 255);
-        transition: fill 0.9s ease;
-    }
-    &:hover {
-        background: rgba(255, 255, 255);
-        opacity: 1;
-        color: #2E2E2E;
-        svg {
-            fill: #2E2E2E;
-        }
-    }
-`;
-
-
-// пробный вариант для добавления в избранное
-export const LikeBtn = styled.button`
-    border: none;
-    opacity: 0.7;
-    background-color:  rgba(255, 255, 255, 0);
-    transition: opacity 0.9s ease;
-    svg {
-        fill: rgba(223, 221, 219, 0.7);
-        transition: fill 0.9s ease, opacity 0.9s ease;
-    }
-&:hover {
-    opacity: 1;   
-    svg {
-            
-        fill: rgba(255, 255, 255, 1);
-    }
-}
-&:focus {
-    opacity: 1;
-
-    svg {
-        fill: rgba(255, 255, 255, 1);
-    }
-}
-`;
-//////////////////////////////////////////////
-
-export const Number = styled.span`
-
-`;
-
-export const BackgroundLayer = styled.span`
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 46%;
-height: 100%;
-background-color: rgba(40, 40, 40, 0.40);
-filter: blur(30px);
-z-index: 1;
-`;
-
-export const MovieInfo = styled.span`
-    position: relative;
-    z-index: 3;
-    height: 510px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-
-`;
-
-export const InfoWrap = styled.span`
-display:flex;
-flex-direction: column;
-gap: 10px;
-padding: 0 0 30px 21px;
-`;
-
-export const DisplayTitle = styled.span`
-max-width: 400px;
-color: #FAFAFA;
-font-size: 45px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-
-
-    margin: 0;
-`;
-
-
-export const MovieOverview = styled.span`
-    color: #BCBCBC;
-    leading-trim: both;
-    font-size: 16px;
-    font-weight: 600;
-    max-width: 520px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 2;
+        margin-top: 0;
+        
+    };
 `;
 
 export const RounderNumber = styled.span`
-            font-size: 34px;
+    font-size: 17px;
             font-weight: bold;
             color: white;
             background-color: #CA7900;
             display: flex;
             justify-content: center;  
             align-items: center;
-            width: 143px;
-            height: 80px;
+            width: 68px;
+            height: 36px;
             border-radius: 16px;
 `;
 
+export const DisplayTitle = styled.span`
+    opacity:0;
+    transition: opacity 600ms ease;
 
-// SLIDER 2
+    font-size:12px;
+    line-height: 1.4;
+    fill: rgba(70, 70, 70, 0.20);
+    backdrop-filter: blur(10px);
+    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding: 15px 15px 15px;
+    margin: 0;
+`;
 
+export const MovieInfo = styled.span`
+    border-radius:16px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 173px;
+    &:hover ${DisplayTitle} {
+        // transform: translateX(0);
+        opacity: 1;
+    }
+`;

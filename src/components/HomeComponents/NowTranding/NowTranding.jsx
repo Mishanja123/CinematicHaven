@@ -1,15 +1,46 @@
 import Slider from "react-slick";
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
+import { getTrandingMovies } from "components/services/api";
+
 import PlaySvg from '../../Svg/PlaySvg/PlaySvg';
-import LikeSvg from '../../Svg/LikeSvg/LikeSvg';
+import ComeSvg from '../../Svg/ComeSvg/ComeSvg';
+import {TrailerModal} from '../../Modal/TrailerModal/TrailerModal';
 
-import { List, LiItem, Heading, LinkWrap, MovieInfo, RounderNumber, DisplayTitle, Overview, PlayWrap, Play} from './NowTranding.styled';
+import { List, LiItem, Heading, LinkWrap, MovieInfo, RounderNumber, DisplayTitle, Overview, TitleWrap, Btn, BtnWrap} from './NowTranding.styled';
 
-export const NowTranding = ({items, location}) => {
+export const NowTranding = ({ location}) => {
+
+    const [items, setItems] = useState([]);
+    const [selectedMovieId, setSelectedMovieId] = useState(null);
+    const [isTrailerOpen, setIsTraileOpen] = useState(false);
+    
+    useEffect(() => {
+        const fetchMovies = async () => {
+            try {
+                const result = await getTrandingMovies();
+                // console.log("now",result)
+
+                setItems(result.results);
+            } catch(e) {
+                console.log("Sorry here error");
+            }
+        }
+        fetchMovies();
+    }, []);
+
+    const openTrailer = (movieId) => {
+        setSelectedMovieId(movieId);
+        setIsTraileOpen(true);
+      };
+      
+      const closeTrailer = () => {
+        setIsTraileOpen(false);
+      };
+      
 
     const sliderSettings = {
         className: "",
@@ -31,6 +62,7 @@ export const NowTranding = ({items, location}) => {
     };
 
     return (
+        <>
         <List>
             <Heading>Now Trending</Heading>
             <Slider
@@ -41,33 +73,29 @@ export const NowTranding = ({items, location}) => {
                 const displayTitle = title || name;
                 return (
                     <LiItem key={id} $backgroundUrl={`https://image.tmdb.org/t/p/original${poster_path}`}>
-                        <Link to={`/movies/${id}`} state={{ from: location }} >
-                                <LinkWrap>
-                                    <RounderNumber>{roundedNumber}</RounderNumber>
+                        <LinkWrap>
+                            <RounderNumber>{roundedNumber}</RounderNumber>
                                     <MovieInfo>
-                                        <DisplayTitle>{displayTitle}</DisplayTitle>
-                                        <PlayWrap>
+                                        <TitleWrap>
+                                            <DisplayTitle>{displayTitle}</DisplayTitle>
                                             <Overview>{overview}</Overview>
-                                            <Play><PlaySvg/></Play>
-                                        </PlayWrap>
+                                        </TitleWrap>
+                                        <BtnWrap>
+                                            <Btn onClick={()=>openTrailer(id)}><PlaySvg/></Btn>
+                                            <Link to={`/movies/${id}`} state={{ from: location }} >
+                                                <Btn><ComeSvg/></Btn>
+                                            </Link>
+                                        </BtnWrap>
                                     </MovieInfo>
-                                </LinkWrap>
-                        </Link>
+                        </LinkWrap>
                     </LiItem>
                 );
             })}
             </Slider>
       </List>
+       {isTrailerOpen && selectedMovieId && (
+        <TrailerModal onClose={closeTrailer} isTrailerOpen={isTrailerOpen} MovieId={selectedMovieId} />
+      )}
+     </>
     );
-};
-NowTranding.propTypes = {
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        name: PropTypes.string,
-        poster_path: PropTypes.string,
-        vote_average: PropTypes.number,
-        id: PropTypes.number,
-      })
-    ).isRequired,
 };

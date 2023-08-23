@@ -4,7 +4,7 @@
 
 body {
   padding: 10px 20px 20px;
-  color: #000000;
+  color: #fff;
   background: url('./images/images/BodyBack.png') no-repeat;
     background-size:cover;
   background-color: rgba(241, 246, 249, 0.40);
@@ -17,6 +17,9 @@ body {
 }
 h1,h2,h3,h4 {
   margin-top: 0;
+}
+p {
+  margin: 0;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

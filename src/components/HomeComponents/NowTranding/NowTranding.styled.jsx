@@ -61,7 +61,6 @@ export const Overview = styled.span`
 export const MovieInfo = styled.span`
     opacity: 0;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
 
     min-height: 180px;
@@ -71,6 +70,7 @@ export const MovieInfo = styled.span`
     padding: 15px 15px 15px;
     margin: 0;
     transition: opacity 0.7s ease;
+
 `;
 export const LinkWrap = styled.span`
     height: 400px;
@@ -84,13 +84,22 @@ export const LinkWrap = styled.span`
     }
 `;
 
-export const PlayWrap = styled.span`
+
+export const TitleWrap = styled.span`
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+
 `;
 
-export const Play = styled.span`
+export const BtnWrap = styled.span`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+export const Btn = styled.button`
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;

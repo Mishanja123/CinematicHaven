@@ -25,6 +25,33 @@ export async function getTrandingMovies() {
       }
 };
 
+export async function getTrailerById(movieId) {
+  try {
+      const {data} = await axios.get(`${BASE_URL}movie/${movieId}/videos`, options);
+      return data
+  } catch (error) {
+      console.log(error);
+    }
+};
+
+export async function getUpcomingMovies() {
+  try {
+      const {data} = await axios.get(`${BASE_URL}movie/upcoming?${PARAMS}&page=1`, options);
+      return data
+  } catch (error) {
+      console.log(error);
+    }
+};
+
+export async function getPopularMovies() {
+  try {
+      const {data} = await axios.get(`${BASE_URL}movie/now_playing?${PARAMS}&page=1`, options);
+      return data
+  } catch (error) {
+      console.log(error);
+    }
+};
+
 //пошук фільму за ключовим словом на сторінці фільмів.
 export async function getMoviesByName(name) {
         try {
@@ -39,6 +66,15 @@ export async function getMoviesByName(name) {
 export async function getMovieDetails(id) {
   try{
     const {data} = await axios.get(`${BASE_URL}movie/${id}${PARAMS}`, options);
+      return data
+       } catch (error) {
+      console.error(error);
+    }
+};
+
+export async function getSimilarMovie(id) {
+  try{
+    const {data} = await axios.get(`${BASE_URL}movie/${id}/similar`, options);
       return data
        } catch (error) {
       console.error(error);
@@ -63,4 +99,22 @@ export async function getMovieReviews(id) {
        } catch (error) {
       console.error(error);
     }
+};
+
+export async function getGenres() {
+  try {
+    const {data} = await axios.get(`${BASE_URL}genre/movie/list`, options)
+    return data
+       } catch (error) {
+      console.error(error);
+    };
+};
+
+export async function getMoviesByGenres(id) {
+  try {
+    const {data} = await axios.get(`${BASE_URL}discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=${id}`, options)
+    return data
+       } catch (error) {
+      console.error(error);
+    };
 };

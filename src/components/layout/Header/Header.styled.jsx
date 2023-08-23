@@ -7,7 +7,9 @@ export const HeaderDiv = styled.header`
 `;
 
 export const Container = styled.div`
-
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 export const Nav = styled.nav`
@@ -45,4 +47,25 @@ export const Link = styled(NavLink)`
       }
 `;
 
+export const MenuWrap = styled.div`
+  min-width: 413.98px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+`;
 
+export const Button = styled.button`
+  background: none;
+  border: none;
+  svg {
+    fill: rgba(223, 221, 219, 0.7);
+    transition: opacity 0.7s ease, fill 0.7s ease, transform 0.7s ease; 
+  }
+  &:hover,
+  &:focus {
+    svg {
+      transform: scale(106%);
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+`;

@@ -6,6 +6,7 @@ export const Container = styled.div`
     margin-bottom: 60px;
 `;
 
+
 export const List = styled.ul`
 
     > li {
@@ -14,8 +15,8 @@ export const List = styled.ul`
 
         > img {
             border-radius: 1px;
-            width: 350px;
-            height: 553.4px;
+            width: 360px;
+            height: 563.4px;
             box-shadow: 1px 3px 6px 0px rgba(0,0,0,0.7);
             transition: box-shadow 0.3s ease;
         };
