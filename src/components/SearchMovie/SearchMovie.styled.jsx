@@ -155,25 +155,25 @@ background: rgba(0, 0, 0, 0.3) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA
     }
 `;
 
-export const SearchBtn = styled.button`
-    overflow: hidden;
-    width: 30px;
-    height: 16px;
-    padding: 0;
-    margin: 0;
-    border: 1px solid transparent;
-    background: transparent;
-    svg {
-        width: 12px;
-        height: 12px;
-    }
+// export const SearchBtn = styled.button`
+//     overflow: hidden;
+//     width: 30px;
+//     height: 16px;
+//     padding: 0;
+//     margin: 0;
+//     border: 1px solid transparent;
+//     background: transparent;
+//     svg {
+//         width: 12px;
+//         height: 12px;
+//     }
 
-    @media screen and (min-width: 768px) {
-        width: 40px;
-        height: 30px;
-        svg {
-            width: 25px;
-            height: 22px;
-        }
-    }
-`;
+//     @media screen and (min-width: 768px) {
+//         width: 40px;
+//         height: 30px;
+//         svg {
+//             width: 25px;
+//             height: 22px;
+//         }
+//     }
+// `;

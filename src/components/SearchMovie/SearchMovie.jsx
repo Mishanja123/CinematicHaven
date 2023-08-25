@@ -1,6 +1,6 @@
-import SearchSvg from '../Svg/SearchSvg/SearchSvg';
+// import SearchSvg from '../Svg/SearchSvg/SearchSvg';
 
-import { Form, Input, SearchBtn } from './SearchMovie.styled';
+import { Form, Input} from './SearchMovie.styled';
 
 export const SearchMovie = ({ onSubmit }) => {
     

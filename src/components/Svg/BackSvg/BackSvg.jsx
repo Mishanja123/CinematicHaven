@@ -1,4 +1,4 @@
-import { SvgBox, Svg } from './BackSvg.styled';
+import { Svg } from './BackSvg.styled';
 
 
 export const BackSvg = () => {
