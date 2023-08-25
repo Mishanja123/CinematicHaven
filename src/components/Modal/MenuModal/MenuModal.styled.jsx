@@ -8,17 +8,17 @@ export const Overlay = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 `;
 
 
   
 export const Modal = styled.div`
     position:relative;
-    top: 120px;
-    left: 955px;
+    top: 90px;
+    left: 0px;
     width: 630px;
     height: 200px;
     padding: 20px 25px;

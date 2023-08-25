@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap');
 
 body {
-  padding: 10px 20px 20px;
+  padding: 5px 5px 5px;
   color: #fff;
   background: url('./images/images/BodyBack.png') no-repeat;
     background-size:cover;

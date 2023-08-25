@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 export const Container = styled.div`
-    height: 404.05px;
+    max-width: 290px;
+    height: 363px;
+    padding: 10px 3px 2px;
+    border-radius: 23px;
     background: rgba(255, 255, 255, 0.30);   
-    border-radius: 38px;
-    padding: 14px 20px 30px;
     box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+
 `;
 
 export const MovieWrapper = styled.div`
@@ -14,32 +16,41 @@ export const MovieWrapper = styled.div`
 `;
 
 export const Heading = styled.h2`
-    leading-trim: both;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -0.02em;
-
-    color: #fff;
     margin: 0;
     margin-bottom: 10px;
+
+    leading-trim: both;
+    color: #FAFAFA;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+
+    @media screen and (min-width: 768px) {
+        font-size: 15px;
+    }
 `;
 
 export const List = styled.ul`
+    // border-radius: 16px;
+    // padding: 5px 5px;
+    // height: 360px; 
+    // overflow-y: auto;
+    // margin-right: 0;
     border-radius: 16px;
-    padding: 5px 5px;
-    height: 360px; 
+    padding: 0px 5px;
+
+    height: 328px; 
     overflow-y: auto;
     margin-right: 0;
-
 `;
 
 export const LiItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 308px;
+    width: 260px;
     height: 100px;
     overflow-y: hidden;
     border-radius:16px;
@@ -90,13 +101,16 @@ export const Play = styled.span`
     justify-content: center;
     align-items: center;
     background-color: rgba(239, 239, 240, 0.4);
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-right: 15px;
     transition: background-color 0.7s ease;
 
     svg {
+        width: 20px;
+        height: 20px;
         fill: white;
         transition: fill 0.7s ease;
     }

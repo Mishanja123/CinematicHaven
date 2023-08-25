@@ -43,8 +43,6 @@ const MovieDetails = () => {
                 id={movieId}
                 location={location}
             />
-
-
         </>
     );
 };

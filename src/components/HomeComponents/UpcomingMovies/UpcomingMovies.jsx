@@ -48,7 +48,7 @@ const closeTrailer = () => {
 
 
   const sliderSettings = {
-    className: "",
+    className: "slider",
     arrows: false,
     dots: true,
     autoplay: true,
@@ -60,8 +60,7 @@ const closeTrailer = () => {
     adaptiveHeight: true,
     variableWidth: true,
     style: {
-      width: 1250,
-      height: 510,
+
     },
   };
 

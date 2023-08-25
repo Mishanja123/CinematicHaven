@@ -56,7 +56,7 @@ export const TrailerModal = ({onClose, isTrailerOpen, MovieId}) => {
     return (
       <Overlay onClick={onClose}>
         <Modal>
-            <Iframe width="1120" height="630" src={`https://www.youtube.com/embed/${videoKey}?autoplay=1`} frameBorder="0" allowFullScreen></Iframe>
+            <Iframe  src={`https://www.youtube.com/embed/${videoKey}?autoplay=1`} frameBorder="0" allowFullScreen></Iframe>
         </Modal>
       </Overlay>
     );

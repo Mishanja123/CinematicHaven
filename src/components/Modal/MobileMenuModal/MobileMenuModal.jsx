@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, createSearchParams  } from 'react-router-dom';
-
-
 import { getGenres } from '../../services/api';
 
-import { Overlay, Modal, GenresList, GenresItem, GenresBtn } from './GenresModal.styled';
+
+import LikeSvg from '../../Svg/LikeSvg/LikeSvg';
+import HomeSvg from '../../Svg/HomeSvg/HomeSvg'
+
+import { Overlay, Modal, Nav, Link, GenresList, GenresItem, GenresBtn} from './MobileMenuModal.styled';
 
 
-export const GenresModal = ({onClose, isCategoryOpen}) => {
+export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
 
     const [items, setItems] = useState([]);
     const navigate = useNavigate()
@@ -24,9 +26,9 @@ export const GenresModal = ({onClose, isCategoryOpen}) => {
         document.removeEventListener("keydown", handleKeyDown, false);
         };
     }, [onClose]);
-    
+
     useEffect(() => {
-        if (isCategoryOpen) {
+        if (isMobileMenuOpen) {
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'visible';
@@ -35,8 +37,8 @@ export const GenresModal = ({onClose, isCategoryOpen}) => {
         return () => {
             document.body.style.overflow = 'visible';
         };
-    }, [isCategoryOpen]);
-    
+    }, [isMobileMenuOpen]);
+
     useEffect(() => {
         const fetchGenres = async () => {
             try {
@@ -61,15 +63,25 @@ export const GenresModal = ({onClose, isCategoryOpen}) => {
     return (
       <Overlay onClick={onClose}>
         <Modal>
-          <GenresList>
-            {items.map(({id, name}) => {
-                return (
-                    <GenresItem key={id}>
-                        <GenresBtn id ={id} onClick={onGenreClick}>{name}</GenresBtn>
-                    </GenresItem>
-                )
-            })}
-          </GenresList>
+            <Nav>
+                <Link to="/" end>
+                    <HomeSvg/>
+                </Link>
+                <Link to="/liked">
+                    <LikeSvg/>
+                </Link>
+            </Nav>
+            <h3>Cetegories:</h3>
+            <GenresList>
+                {items.map(({id, name}) => {
+                    return (
+                        <GenresItem key={id}>
+                            <GenresBtn id ={id} onClick={onGenreClick}>{name}</GenresBtn>
+                        </GenresItem>
+                    )
+                })}
+            </GenresList>
+            <button>privet</button>
         </Modal>
       </Overlay>
     );

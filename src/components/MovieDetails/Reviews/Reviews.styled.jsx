@@ -4,9 +4,10 @@ export const ReviewStyled = styled.div`
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 520px;
-    margin: 20px;
-    padding: 20px;
+    width: 266px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
 
@@ -57,7 +58,7 @@ export const ReviewStyled = styled.div`
         font-size: 14px;
         color: black;
         line-height: 1.5;
-        width: 500px;
+        width: 266px;
         height: 200px;
         overflow: auto;
         >p{

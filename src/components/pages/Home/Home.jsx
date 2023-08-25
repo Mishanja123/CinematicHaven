@@ -65,36 +65,37 @@ const Home = () => {
 
     return(
         <>
-
             {(searchQuery || searchGenre) ?
                 <MovieList
                     movies={movies}
                     location={location}
                 />
-            :
-        <HomeBox> 
-
-           <Container>
-                <PopularMovies
-                    location={location}
-                /> 
-                <RecentlyViewed
-                    items={items}
-                    location={location}
-                />
-           </Container>
-           <Container>
-                <UpcomingMovies
-                    location={location}
-                />
-                <NowTranding
-                    location={location}
-                />
-            </Container>
-            </HomeBox>
+            :   
+                <HomeBox> 
+                    <Container>
+                    <PopularMovies
+                            location={location}
+                        /> 
+                    </Container>
+                    <Container>
+                        <UpcomingMovies
+                            location={location}
+                        />
+                    </Container>
+                    <Container>
+                        <RecentlyViewed
+                            items={items}
+                            location={location}
+                        />
+                    </Container>
+                    <Container>
+                        <NowTranding
+                            location={location}
+                        />
+                    </Container>
+                </HomeBox>
             }
-                    </>
-
+        </>
     );
 };
 

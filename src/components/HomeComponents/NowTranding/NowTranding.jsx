@@ -43,20 +43,20 @@ export const NowTranding = ({ location}) => {
       
 
     const sliderSettings = {
-        className: "",
+        className: "slider",
         autoplay: true,
         autoplaySpeed: 8000,
+        arrows: false,
         dots: false,
         infinite: true,
         speed: 2000,
-        slidesToShow: 4,
+        slidesToShow: 3,
         slidesToScroll: 1,
         swipeToSlide: true,
         focusOnSelect: true,
         centerMode: true,
-        centerPadding: -10,
+        centerPadding: -9,
         style: {
-          width: 1250,
         },
     };
 
@@ -81,7 +81,7 @@ export const NowTranding = ({ location}) => {
                                         </TitleWrap>
                                         <BtnWrap>
                                             <Btn onClick={()=>openTrailer(id)}><PlaySvg/></Btn>
-                                            <Link to={`/movies/${id}`} state={{ from: location }} >
+                                            <Link to={`/movies/${id}`} state={{ from: location }}>
                                                 <Btn><ComeSvg/></Btn>
                                             </Link>
                                         </BtnWrap>

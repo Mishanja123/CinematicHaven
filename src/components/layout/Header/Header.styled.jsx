@@ -2,24 +2,42 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 // 196,237,192
-export const HeaderDiv = styled.header`
-  margin-bottom: 48px;
-`;
+export const HeaderBox = styled.header`
 
-export const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 1200px) {
+  
+  }
+`;
+
+export const SearchWrap = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
 `;
 
 export const Nav = styled.nav`
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 50px;
+  @media (max-width: 767px) {
+    display: none;
+  }
 `;
 
 export const Link = styled(NavLink)`
-  width: 40px;
+  height: 35px;
+  width: 30px;
   position: relative;
     svg {
       transition-duration: 1200ms;
@@ -27,7 +45,7 @@ export const Link = styled(NavLink)`
     }
     &.active {
       svg {
-        transform: scale(106%);
+        transform: scale(107%);
         fill: rgba(255, 255, 255, 1);
       }
     }
@@ -48,15 +66,42 @@ export const Link = styled(NavLink)`
 `;
 
 export const MenuWrap = styled.div`
-  min-width: 413.98px;
+display: none;
   display: flex;
-  justify-content: flex-end;
   gap: 25px;
 `;
 
 export const Button = styled.button`
   background: none;
   border: none;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  svg {
+    fill: rgba(223, 221, 219, 0.7);
+    transition: opacity 0.7s ease, fill 0.7s ease, transform 0.7s ease; 
+  }
+  &:hover,
+  &:focus {
+    svg {
+      transform: scale(106%);
+      fill: rgba(255, 255, 255, 1);
+    }
+  }
+`;
+
+export const MobileMenuBtn = styled.button`
+  background: none;
+  padding: 0;
+  border: none;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
   svg {
     fill: rgba(223, 221, 219, 0.7);
     transition: opacity 0.7s ease, fill 0.7s ease, transform 0.7s ease; 

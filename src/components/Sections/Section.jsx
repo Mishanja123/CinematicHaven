@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 
-import { Container } from './Section.styled';
+import {SectionBox, Container } from './Section.styled';
 
 export const Section = ({ children }) => {
     return (
-        <Container>
-            {children}
-        </Container>
+        <SectionBox>
+            <Container>
+                {children}
+            </Container>
+        </SectionBox>
     );
 };
 Section.propTypes = {

@@ -24,7 +24,6 @@ const Reviews = () => {
 
     return (
         <>
-     <div>
         {reviews.length === 0 ? <p>No reviews available</p> : reviews.map((review) => (
             <ReviewStyled key={review.id}>
                 <div className="review-header">
@@ -54,7 +53,6 @@ const Reviews = () => {
                 </div>
             </ReviewStyled>
         ))}
-    </div>
     </>
     );
 };

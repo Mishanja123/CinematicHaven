@@ -6,5 +6,6 @@ export const SvgBox = styled.div`
     justify-content: center;
 `;
 export const Svg = styled.svg`
-    margin-bottom: 5px;
+    // margin-bottom: 3px;
+    
 `;

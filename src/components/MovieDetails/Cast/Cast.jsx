@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css';
+// import Slider from "react-slick";
+// import 'slick-carousel/slick/slick.css'; 
+// import 'slick-carousel/slick/slick-theme.css';
 
 import { getMovieCast } from 'components/services/api';
 
@@ -25,31 +25,40 @@ const Cast = () => {
           fetchCast();
     }, [movieId]);
 
-    const sliderSettings = {
-        className: "",
-        autoplay: true,
-        autoplaySpeed: 10000,
-        dots: false,
-        infinite: true,
-        speed: 700,
-        slidesToShow: 7,
-        slidesToScroll: 1,
-        swipeToSlide: true,
-        focusOnSelect: true,
-        centerMode: true,
-        centerPadding: -18,
-        style: {
-          width: 1300,
-        },
-    };
+    // const sliderSettings = {
+    //     className: "slider",
+    //     dots: false,
+    //     infinite: true,
+    //     speed: 700,
+    //     // slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     swipeToSlide: true,
+    //     focusOnSelect: true,
+    //     // centerMode: true,
+    //     // centerPadding: -12,
+    //     responsive: [
+    //         {
+    //           breakpoint: 1200,
+    //           settings: {
+    //             slidesToShow: 3,
+    //           },
+    //         },
+    //         {
+    //           breakpoint: 768, // Тут може бути відповідний розмір для мобільних
+    //           settings: {
+    //             slidesToShow: 2,
+    //           },
+    //         },
+    //       ],
+    // };
 
     return (
         <>
         <SecondHeading>Cast:</SecondHeading>
         <List>
-            <Slider
+            {/* <Slider
                 {...sliderSettings}
-            >
+            > */}
             {cast.map(({profile_path,name,id}) => {
                 return (
                     <LiItem key={id}>
@@ -58,7 +67,7 @@ const Cast = () => {
                     </LiItem>
                 )
             })}
-            </Slider>
+            {/* </Slider> */}
         </List>
         </>
     );

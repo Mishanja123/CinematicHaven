@@ -10,7 +10,7 @@ export const AditionalInformation = () => {
 
     return (
         <Box>
-            <SecondHeading>Aditional information</SecondHeading>
+            <SecondHeading>Aditional information:</SecondHeading>
             <List>
                 <LiItem>
                     <Link to="reviews">
