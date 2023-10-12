@@ -7,5 +7,4 @@ export const SvgBox = styled.div`
 `;
 
 export const Svg = styled.svg`
-    margin-bottom: 5px;
 `;

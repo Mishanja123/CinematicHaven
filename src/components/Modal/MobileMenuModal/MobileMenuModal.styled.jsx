@@ -3,34 +3,32 @@ import { NavLink } from 'react-router-dom';
 
 
 export const Overlay = styled.div`
-    z-index: 1200;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  z-index: 1200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 `;
 
-
-  
 export const Modal = styled.div`
-    position:relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    padding: 50px 80px 50px 50px;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin: 0;
+  position: relative;
+  top: 0px;
+  right: ${props => props.isopen ? '0' : '-300px'};
+  width: 100%;
+  height: 100%;
+  padding: 50px 80px 50px 50px;
+  background-color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  transition: right 0.5s ease;
 `;
 
 export const Nav = styled.nav`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   gap: 50px;
   margin-bottom: 50px;
@@ -82,6 +80,7 @@ export const GenresItem = styled.li`
 export const GenresBtn = styled.button`
     color: rgba(255, 255, 255, 0.7);
     padding: 10px 16px;
+    width: 123px;
     border: none;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 24px;

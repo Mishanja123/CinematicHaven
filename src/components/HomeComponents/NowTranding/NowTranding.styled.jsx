@@ -87,6 +87,72 @@ export const RounderNumber = styled.span`
     }
 `;
 
+export const LikeBtn = styled.button`
+    // margin-top: 9px;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    opacity: 0.7;
+    background-color:  rgba(255, 255, 255, 0);
+    transition: opacity 0.9s ease;
+    svg {
+        fill: rgba(223, 221, 219, 0.7);
+        transition: fill 0.9s ease, opacity 0.9s ease;
+    }    svg {
+        width:13px;
+        height: 13px;
+        fill: rgb(255, 255, 255);
+        transition: fill 0.9s ease;
+    }
+
+    @media screen and (min-width: 768px) {
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &:hover {
+        opacity: 1;   
+        svg {
+            fill: rgba(255, 255, 255, 1);
+        }
+    }
+    &:focus {
+        opacity: 1;
+        svg {
+            fill: rgba(255, 255, 255, 1);
+        }
+    }
+`;
+export const RounderWrap = styled.span`
+    border-top-right-radius: 25px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    display: flex;
+    gap: 30px;
+
+    @media screen and (min-width: 768px) {
+        gap:122px;
+
+    }
+
+    @media screen and (min-width: 1200px) {
+        gap:153px;
+
+    }
+`;
+
 export const DisplayTitle = styled.span`
     opacity:1;
     font-size: 8px;

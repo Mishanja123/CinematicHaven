@@ -53,7 +53,7 @@ const Cast = () => {
     // };
 
     return (
-        <>
+        <div>
         <SecondHeading>Cast:</SecondHeading>
         <List>
             {/* <Slider
@@ -69,7 +69,7 @@ const Cast = () => {
             })}
             {/* </Slider> */}
         </List>
-        </>
+        </div>
     );
 };
 

@@ -1,83 +1,9 @@
-// import styled from 'styled-components';
-
-
-
-// export const Form = styled.form`
-//     color: #555;
-//     display: flex;
-//     padding: 10px 12px;
-//     border-radius: 40px;
-//     margin: 0;
-//     background: rgba(32, 35, 39, 0.50);
-//     box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
-//     width: 160px;
-
-//     @media screen and (min-width: 768px) {
-//         margin-right: 0;
-//         padding: 17px 19px;
-//         width: 280px;
-//     }
-//     @media screen and (min-width: 1200px) {
-//         width: 360px;
-//     }
-// `;
-
-// export const Input = styled.input`
-
-//     font-size: 12px;
-//     font-weight: 500;
-//     color: #fff;
-//     width:100%;
-//     border: none;
-//     background: transparent;
-//     margin: 0;
-//     outline: none;
-
-//     @media screen and (min-width: 768px) {
-//         font-size: 17px;
-
-//     }
-
-//     @media screen and (min-width: 1200px) {
-
-//     }
-// `;
-
-// export const SearchBtn = styled.button`
-//     overflow: hidden;
-//     width: 30px;
-//     height:16px;
-    
-//     padding: 0;
-//     margin: 0;
-//     border: 1px solid transparent;
-//     background: transparent;
-//     svg {
-//         width: 12px;
-//         height: 12px;
-//     }
-
-//     @media screen and (min-width: 768px) {
-//         width: 40px;
-//         height:30px;
-
-//         svg {
-//             width: 25px;
-//             height: 22px;
-//         }
-//     }
-
-//     @media screen and (min-width: 1200px) {
-
-//     }
-// `;
-
-
 import styled from 'styled-components';
 
 export const Form = styled.form`
 
     width: 160px;
+    
 
     @media screen and (min-width: 768px) {
         margin-right: 0;
@@ -102,8 +28,9 @@ export const Input = styled.input`
     font-size: inherit;
     font-family: inherit;
     color: #555;
-    font-size: 10px;
-    padding: 17px 23px;
+    font-size: 13px;
+    padding: 16px 24px;
+    
 
     background: rgba(0, 0, 0, 0.3) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNqslI0RgyAMhdENWIEVWMEVXIGO0BW6Ah2hHcGOoCPYEewINFzBe9IA9id37w4kfEZesHHOCSYUqSPJML+RJlELDwN1pMHxMZNMkr8RTgyz2YPH5LmtwXpIHkOFmKhIlxowDmYAycKnHAHYcTCsSpXOJCie6YWDnXKLGeHLN2stGaqDsXXrX3GFcYcLrfhjtKEhffQ792gYT2nT6pJDjCw4z7ZGdGipOIqNbXIwFUARmCbKpMfYxsWJBmCEDoW7+gYUTAU2s3HJrK3AJvMLkqGHFLgWXTckm+SfSQexs+tLRqwVfgvjgMsvMAT689S5M/sk/I14kO5PAQYAuk6L1q+EdHMAAAAASUVORK5CYII=) no-repeat 14px 13px;
     box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
@@ -121,8 +48,6 @@ export const Input = styled.input`
 
     @media screen and (min-width: 768px) {
         max-width: 200px;
-        font-size: 12px;
-        padding: 17px 24px;
 
         background: rgba(0, 0, 0, 0.3) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNqslI0RgyAMhdENWIEVWMEVXIGO0BW6Ah2hHcGOoCPYEewINFzBe9IA9id37w4kfEZesHHOCSYUqSPJML+RJlELDwN1pMHxMZNMkr8RTgyz2YPH5LmtwXpIHkOFmKhIlxowDmYAycKnHAHYcTCsSpXOJCie6YWDnXKLGeHLN2stGaqDsXXrX3GFcYcLrfhjtKEhffQ792gYT2nT6pJDjCw4z7ZGdGipOIqNbXIwFUARmCbKpMfYxsWJBmCEDoW7+gYUTAU2s3HJrK3AJvMLkqGHFLgWXTckm+SfSQexs+tLRqwVfgvjgMsvMAT689S5M/sk/I14kO5PAQYAuk6L1q+EdHMAAAAASUVORK5CYII=) no-repeat 15px 14.5px;
         &:focus {
@@ -154,26 +79,3 @@ background: rgba(0, 0, 0, 0.3) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA
         }
     }
 `;
-
-// export const SearchBtn = styled.button`
-//     overflow: hidden;
-//     width: 30px;
-//     height: 16px;
-//     padding: 0;
-//     margin: 0;
-//     border: 1px solid transparent;
-//     background: transparent;
-//     svg {
-//         width: 12px;
-//         height: 12px;
-//     }
-
-//     @media screen and (min-width: 768px) {
-//         width: 40px;
-//         height: 30px;
-//         svg {
-//             width: 25px;
-//             height: 22px;
-//         }
-//     }
-// `;

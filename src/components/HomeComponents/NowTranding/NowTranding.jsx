@@ -1,23 +1,33 @@
 import Slider from "react-slick";
 import { useEffect, useState } from 'react';
-
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
+
 import { getTrandingMovies } from "components/services/api";
+import { useAuth } from 'hooks/use-auth';
+import { addToWatchlist } from 'components/services/watch-list';
+
 
 import PlaySvg from '../../Svg/PlaySvg/PlaySvg';
 import ComeSvg from '../../Svg/ComeSvg/ComeSvg';
 import {TrailerModal} from '../../Modal/TrailerModal/TrailerModal';
 
-import { List, LiItem, Heading, LinkWrap, MovieInfo, RounderNumber, DisplayTitle, Overview, TitleWrap, Btn, BtnWrap} from './NowTranding.styled';
+import { List, LiItem, Heading, LinkWrap, MovieInfo, RounderNumber, RounderWrap, DisplayTitle, Overview, TitleWrap, LikeBtn, Btn, BtnWrap} from './NowTranding.styled';
+import LikeSvg from "components/Svg/LikeSvg/LikeSvg";
 
 export const NowTranding = ({ location}) => {
-
     const [items, setItems] = useState([]);
     const [selectedMovieId, setSelectedMovieId] = useState(null);
     const [isTrailerOpen, setIsTraileOpen] = useState(false);
+    const {id, isAuth} = useAuth();
+    const navigate = useNavigate();
     
+    const handleClick = async (movieId, title, poster_path, overview) => {
+        if (!isAuth) return navigate("/login");
+        addToWatchlist(id, movieId, title, poster_path, overview);
+    }
+
     useEffect(() => {
         const fetchMovies = async () => {
             try {
@@ -73,7 +83,10 @@ export const NowTranding = ({ location}) => {
                 return (
                     <LiItem key={id} $backgroundUrl={`https://image.tmdb.org/t/p/original${poster_path}`}>
                         <LinkWrap>
-                            <RounderNumber>{roundedNumber}</RounderNumber>
+                            <RounderWrap>
+                                <RounderNumber>{roundedNumber}</RounderNumber>
+                                <LikeBtn onClick={() => handleClick(id, title||name, poster_path, overview)}><LikeSvg/></LikeBtn>
+                            </RounderWrap>
                                     <MovieInfo>
                                         <TitleWrap>
                                             <DisplayTitle>{displayTitle}</DisplayTitle>

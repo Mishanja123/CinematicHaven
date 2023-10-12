@@ -34,10 +34,17 @@ export const Nav = styled.nav`
     display: none;
   }
 `;
+export const NavLog = styled.nav`
+  display: flex;
+  gap: 10px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+`;
 
 export const Link = styled(NavLink)`
-  height: 35px;
-  width: 30px;
+  padding: 5px 5px;
   position: relative;
     svg {
       transition-duration: 1200ms;
@@ -93,17 +100,16 @@ export const Button = styled.button`
   }
 `;
 
+export const LogoutBtn = styled.button `
+
+`
+
 export const MobileMenuBtn = styled.button`
   background: none;
   padding: 0;
   border: none;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
-
   svg {
-    fill: rgba(223, 221, 219, 0.7);
+    fill: rgba(250, 250, 250, 1);
     transition: opacity 0.7s ease, fill 0.7s ease, transform 0.7s ease; 
   }
   &:hover,
@@ -113,4 +119,9 @@ export const MobileMenuBtn = styled.button`
       fill: rgba(255, 255, 255, 1);
     }
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
 `;

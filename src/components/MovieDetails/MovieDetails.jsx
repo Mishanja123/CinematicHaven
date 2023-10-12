@@ -11,6 +11,8 @@ const MovieDetails = () => {
     const [overview, setOverview] = useState('');
     const [poster, setPoster] = useState('');
     const [genres, setGenres] = useState([]);
+    const [backdrop, setBackdrop] = useState('');
+    const [average, setAverage] = useState('');
     const location = useLocation();
     const { movieId } = useParams();
 
@@ -25,6 +27,8 @@ const MovieDetails = () => {
                 setYear(year);
                 setOverview(results.overview);
                 setPoster(results.poster_path);
+                setBackdrop(results.backdrop_path);
+                setAverage(results.vote_average);
             }catch(error) {
                 console.log(error);
             }
@@ -40,7 +44,9 @@ const MovieDetails = () => {
                 year={year}
                 genres={genres}
                 overview={overview}
-                id={movieId}
+                backdrop={backdrop}
+                average={average}
+                movieId={movieId}
                 location={location}
             />
         </>

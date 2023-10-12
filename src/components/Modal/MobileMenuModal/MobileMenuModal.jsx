@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, createSearchParams  } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { getGenres } from '../../services/api';
+import { useAuth } from 'hooks/use-auth';
+import { removeUser } from 'store/slices/userSlice';
 
 
 import LikeSvg from '../../Svg/LikeSvg/LikeSvg';
@@ -10,8 +13,10 @@ import { Overlay, Modal, Nav, Link, GenresList, GenresItem, GenresBtn} from './M
 
 
 export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
-
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [items, setItems] = useState([]);
+    const { isAuth } = useAuth();
+    const dispatch = useDispatch();
     const navigate = useNavigate()
 
 
@@ -39,6 +44,22 @@ export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
         };
     }, [isMobileMenuOpen]);
 
+    // useEffect(() => {
+    //     if (isMobileMenuOpen) {
+    //         setIsMenuOpen(true);
+    //         document.body.style.overflow = 'hidden';
+    //     } else {
+    //         document.body.style.overflow = 'visible';
+    //         setTimeout(() => {
+    //             setIsMenuOpen(false);
+    //         }, 300);
+    //     }
+    
+    //     return () => {
+    //         document.body.style.overflow = 'visible';
+    //     };
+    // }, [isMobileMenuOpen]);
+
     useEffect(() => {
         const fetchGenres = async () => {
             try {
@@ -59,17 +80,24 @@ export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
         }) 
     }
 
-
     return (
       <Overlay onClick={onClose}>
-        <Modal>
+        <Modal isopen={isMenuOpen}>
             <Nav>
                 <Link to="/" end>
                     <HomeSvg/>
                 </Link>
-                <Link to="/liked">
-                    <LikeSvg/>
-                </Link>
+                {isAuth ? ( 
+                    <Link to="/watchlist">
+                        <LikeSvg/>
+                    </Link>) 
+                    : 
+                    (
+                    <>
+                    <Link to="/register">reg</Link> 
+                    <Link to="/login">log</Link> 
+                    </>
+                )}
             </Nav>
             <h3>Cetegories:</h3>
             <GenresList>
@@ -81,8 +109,8 @@ export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
                     )
                 })}
             </GenresList>
-            <button>privet</button>
-        </Modal>
+            {isAuth ? (<button onClick={() => dispatch(removeUser())}>Logout</button>) : (<></>)}       
+         </Modal>
       </Overlay>
     );
 }

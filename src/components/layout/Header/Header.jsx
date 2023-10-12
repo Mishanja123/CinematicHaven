@@ -1,31 +1,26 @@
 import { useState, Suspense } from 'react';
 import { Outlet, useNavigate, createSearchParams } from 'react-router-dom';
-
+import { useAuth } from '../../../hooks/use-auth';
 
 import { SearchMovie } from '../../SearchMovie/SearchMovie';
+import { GenresModal } from 'components/Modal/GenresModal/GenresModal';
+import { MenuModal } from 'components/Modal/MenuModal/MenuModal';
+import { MobileMenuModal } from 'components/Modal/MobileMenuModal/MobileMenuModal';
 import HomeSvg from '../../Svg/HomeSvg/HomeSvg'
-// import MovieSvg from '../../Svg/MovieSvg/MovieSvg'
 import LikeSvg from '../../Svg/LikeSvg/LikeSvg';
 import MenuSvg from '../../Svg/MenuSvg/MenuSvg';
 import MobileMenuSvg from '../../Svg/MobileMenuSvg/MobileMenuSvg';
 import ListTrueSvg from '../../Svg/ListTrueSvg/ListTrueSvg';
 import ListFalseSvg from '../../Svg/ListFalseSvg/ListFalseSvg';
 
+import { HeaderBox, SearchWrap, Link, Nav, NavLog, MenuWrap, Button, MobileMenuBtn } from './Header.styled';
 
-
-import { GenresModal } from 'components/Modal/GenresModal/GenresModal';
-import { MenuModal } from 'components/Modal/MenuModal/MenuModal';
-import { MobileMenuModal } from 'components/Modal/MobileMenuModal/MobileMenuModal';
-
-import { HeaderBox, SearchWrap, Link, Nav, MenuWrap, Button, MobileMenuBtn, } from './Header.styled';
 
 export const Header = () => {
     const [isCategoryOpen, setIsCategoryOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-
-
+    const { isAuth } = useAuth();
     const navigate = useNavigate();
     
 
@@ -63,7 +58,9 @@ export const Header = () => {
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
     };
-    
+
+
+
     return(
         <>
             <HeaderBox>
@@ -75,16 +72,30 @@ export const Header = () => {
                             <Link to="/" end>
                                 <HomeSvg/>
                             </Link>
-                            <Link to="/liked">
+                            <Link to="/watchlist">
                                 <LikeSvg/>
                             </Link>
                         </Nav>
+                        <Button type='button' onClick={openCategory}>{isCategoryOpen ? <ListTrueSvg/> : <ListFalseSvg/>}</Button>
                     </SearchWrap>
                     <MenuWrap>
-                        <Button type='button' onClick={openCategory}>{isCategoryOpen ? <ListTrueSvg/> : <ListFalseSvg/>}</Button>
-                        <Button type='button' onClick={openMenu}><MenuSvg/></Button>
+                        {isAuth ? (
+                            <div>
+                            <Button type='button' onClick={openMenu}><MenuSvg/></Button>
+                            </div>
+                        ) : (
+                            <NavLog>
+                                <Link to="/register">
+                                    reg
+                                </Link>
+
+                                <Link to="/login">
+                                    log
+                                </Link>
+                            </NavLog>
+                        )}
+                        <MobileMenuBtn onClick={openMobileMenu}><MobileMenuSvg/></MobileMenuBtn>    
                     </MenuWrap>
-                        <MobileMenuBtn type='button' onClick={openMobileMenu}><MobileMenuSvg/></MobileMenuBtn>
                     {isCategoryOpen && <GenresModal onClose={closeCategory} isCategoryOpen={isCategoryOpen} />}
                     {isMenuOpen && <MenuModal onClose={closeMenu} isMenuOpen={isMenuOpen} />}
                     {isMobileMenuOpen && <MobileMenuModal onClose={closeMobileMenu} isMobileMenuOpen={isMobileMenuOpen} />}

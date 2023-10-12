@@ -1,7 +1,7 @@
 import { SvgBox, Svg } from './LikeSvg.style';
 
 
-export const MovieSvg = () => {
+export const LikeSvg = () => {
 
     return (
       <SvgBox>
@@ -12,7 +12,7 @@ export const MovieSvg = () => {
       </SvgBox>
     );
   }
-  export default MovieSvg;
+  export default LikeSvg;
 
 
 

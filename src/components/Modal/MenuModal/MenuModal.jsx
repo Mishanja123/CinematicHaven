@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 
 import { Overlay, Modal } from './MenuModal.styled';
+import { useAuth } from 'hooks/use-auth';
+import { useDispatch } from 'react-redux';
+import { removeUser } from 'store/slices/userSlice';
 
 
 export const MenuModal = ({onClose, isMenuOpen}) => {
-
+    const [isOpen, setIsOpen] = useState(false);
+    const { isAuth, email } = useAuth();
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -22,6 +26,7 @@ export const MenuModal = ({onClose, isMenuOpen}) => {
 
     useEffect(() => {
         if (isMenuOpen) {
+            setIsOpen(true);
             document.body.style.overflow = 'hidden';
         } else {
             document.body.style.overflow = 'visible';
@@ -35,8 +40,15 @@ export const MenuModal = ({onClose, isMenuOpen}) => {
 
     return (
       <Overlay onClick={onClose}>
-        <Modal>
-
+        <Modal isopen={isOpen}>
+            {isAuth ? (
+                <>
+                    <p>Hi {email}</p>
+                    <button onClick={() => dispatch(removeUser())}>Logout</button>
+                </>
+            ) 
+            :
+            (<></>)}
         </Modal>
       </Overlay>
     );
