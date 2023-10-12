@@ -13,7 +13,7 @@ import { Overlay, Modal, Nav, Link, GenresList, GenresItem, GenresBtn} from './M
 
 
 export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [items, setItems] = useState([]);
     const { isAuth } = useAuth();
     const dispatch = useDispatch();
@@ -82,7 +82,7 @@ export const MobileMenuModal = ({onClose, isMobileMenuOpen}) => {
 
     return (
       <Overlay onClick={onClose}>
-        <Modal isopen={isMenuOpen}>
+        <Modal isopen={isMobileMenuOpen}>
             <Nav>
                 <Link to="/" end>
                     <HomeSvg/>

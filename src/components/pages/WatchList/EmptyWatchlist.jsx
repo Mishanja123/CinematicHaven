@@ -3,6 +3,6 @@ import { Box} from './EmptyWatchlist.styled';
 
 export const EmptyWatchlist = () => {
     return (
-
+        <></>
     )
 }

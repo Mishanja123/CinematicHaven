@@ -12,7 +12,7 @@ import DeleteSvg from 'components/Svg/DeleteSvg/DeleteSvg';
 import NextSvg from 'components/Svg/NextSvg/NextSvg';
 import PreviousSvg from 'components/Svg/PreviousSvg/PreviousSvg';
 
-import { BackgroundLayer, Box, List, Item, Img, TextWrap, Title, Overview, Button, LayerBox} from './WatchList.styled';
+import { BackgroundLayer, Box, List, Item, Img, TextWrap, Title, Overview, Button } from './WatchList.styled';
 
 
 const WatchList = () => {
@@ -37,7 +37,7 @@ const WatchList = () => {
     
       if (watchlistSnap.exists()) {
         const data = watchlistSnap.data().movies;
-        setItems(prevState => data);
+        setItems(data);
       }
     }
     getWatchlist(id);

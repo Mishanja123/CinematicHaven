@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import { AditionalInformation } from '../AditionalInformation/AditionalInformation';
 import { TrailerModal } from 'components/Modal/TrailerModal/TrailerModal';
 import { SimilarMovie } from '../SimilarMovie/SimilarMovie';
-import { BackLink } from 'components/BackLink/BackLink';
+// import { BackLink } from 'components/BackLink/BackLink';
 import  Cast  from '../Cast/Cast';
 
 import { BackdropBox, BackdropContent, BackgroundLayer, TrailerBtn, LikeBtn, Container, PosterBox, Poster, InfoBox,TitleWrap, InfoHeading, Year,  GenresList, GenresItem, GenresText, Overview, HeadingWraper, RoundedNumber } from './MovieInfo.styled';
@@ -19,7 +19,7 @@ export const MovieInfo = ({ poster, title, year, genres, overview, movieId, back
     const [isTrailerOpen, setIsTraileOpen] = useState(false);
     const {id, isAuth} = useAuth();
     const navigate = useNavigate();
-    const backPath =  useRef(location.state?.from ?? `/`);
+    // const backPath =  useRef(location.state?.from ?? `/`);
 
     const roundedNumber = (Math.round(parseFloat(average) * 10) / 10).toFixed(1);
   
