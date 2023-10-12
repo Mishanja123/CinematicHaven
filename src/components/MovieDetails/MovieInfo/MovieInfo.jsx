@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { AditionalInformation } from '../AditionalInformation/AditionalInformation';
 import { TrailerModal } from 'components/Modal/TrailerModal/TrailerModal';
