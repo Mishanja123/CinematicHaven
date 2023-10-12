@@ -41,7 +41,7 @@ const WatchList = () => {
       }
     }
     getWatchlist(id);
-  }, [id, items]);
+  }, [isAuth, id, items]);
 
 
   const handleClick = (movieId, title, poster_path, overview) => {
