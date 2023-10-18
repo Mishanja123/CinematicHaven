@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CinematicHaven/static/css/main.ca5ada46.css",
-    "main.js": "/CinematicHaven/static/js/main.d1801b92.js",
+    "main.js": "/CinematicHaven/static/js/main.fac3abcd.js",
     "static/css/28.c10ddb18.chunk.css": "/CinematicHaven/static/css/28.c10ddb18.chunk.css",
     "static/js/28.3d825df9.chunk.js": "/CinematicHaven/static/js/28.3d825df9.chunk.js",
     "static/js/347.047b2699.chunk.js": "/CinematicHaven/static/js/347.047b2699.chunk.js",
@@ -21,7 +21,7 @@
     "static/media/slick.woff": "/CinematicHaven/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/CinematicHaven/index.html",
     "main.ca5ada46.css.map": "/CinematicHaven/static/css/main.ca5ada46.css.map",
-    "main.d1801b92.js.map": "/CinematicHaven/static/js/main.d1801b92.js.map",
+    "main.fac3abcd.js.map": "/CinematicHaven/static/js/main.fac3abcd.js.map",
     "28.c10ddb18.chunk.css.map": "/CinematicHaven/static/css/28.c10ddb18.chunk.css.map",
     "28.3d825df9.chunk.js.map": "/CinematicHaven/static/js/28.3d825df9.chunk.js.map",
     "347.047b2699.chunk.js.map": "/CinematicHaven/static/js/347.047b2699.chunk.js.map",
@@ -37,6 +37,6 @@
   },
   "entrypoints": [
     "static/css/main.ca5ada46.css",
-    "static/js/main.d1801b92.js"
+    "static/js/main.fac3abcd.js"
   ]
 }
